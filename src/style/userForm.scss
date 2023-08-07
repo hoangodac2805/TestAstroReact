@@ -1,0 +1,27 @@
+.c-userform{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    &_title{
+    }
+    &_body{
+        display: flex;
+        flex-wrap: wrap;
+        input{
+            width: calc(100% / 2 - 20px);
+            height: 30px;
+            border: 1px solid #565656;
+            padding: 0 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            &:nth-child(2n){
+                margin-left: 40px;
+            }
+        }
+        button[type="submit"]{
+            width: 60%;
+            color: red;
+            margin: 0 auto;
+        }
+    }
+}
