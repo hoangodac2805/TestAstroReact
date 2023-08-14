@@ -28,6 +28,10 @@ const  UserList = (props) => {
                                 <td>{item._email}</td>
                                 <td>{item._password}</td>
                                 <td>
+                                  <button onClick={()=>
+                                  {
+                                    user.set({...item});
+                                  }}>Update</button>
                                   <button onClick={()=>{
                                         deleteUser(item._id)
                                   }}>Delete</button>

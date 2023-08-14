@@ -13,15 +13,17 @@ export const users = atom([{_id:1,_name:"DacHoa"}]);
 export const createAndUpdate = (userInfo) =>{
     const usersTemp = users.value;
     if(userInfo._id){
+        user.set({...userInfo});
         users.set(
             usersTemp.map(item => {
                 if(item._id === userInfo._id){
-                    return userInfo;
+                    return {...userInfo};
                 }else{
                     return item;
                 }
             })
         )
+       
     }else{
         users.set([
             ...usersTemp,
@@ -29,13 +31,14 @@ export const createAndUpdate = (userInfo) =>{
                 _id : nanoid(8)    
             }
         ])
-        user.set({
-            _id : '',
-            _name: '',
-            _email:'',
-            _password:''
-        })
+      
     }
+    user.set({
+        _id : '',
+        _name: '',
+        _email:'',
+        _password:''
+    })
 }
 
 export const deleteUser = (userid) =>{
